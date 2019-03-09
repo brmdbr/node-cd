@@ -31,12 +31,8 @@ GitHub.prototype.post = function (req, res) {
     return
   }
 
-  if (payload.ref === config.repository.branch ||
-    payload.ref === 'refs/heads/master' ||
-    payload.ref === 'refs/heads/develop') {
-    myExec(config.action.exec.github)
-  }
-
+  myExec(config.action.exec.github)
+  
   res.writeHead(200)
   res.end()
 }
